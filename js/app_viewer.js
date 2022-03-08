@@ -6,15 +6,13 @@ const viewer = new Viewer(document.getElementById('viewer'), {
 });
 
 const gallery = new Viewer(document.getElementById('slider-item'));
-var i=0;
 document.getElementsByClassName("heart")[0].addEventListener("click", function()
 {   
-    var item = document.getElementsByClassName('item')[i];
-    item.className += " disappear";
-    i+=1;
-    if (i == 8)
-        setTimeout(() => {  window.location.href = "./subPage/subPage.html"; }, 2000);
-    
+    for (let i = 0; i < 8; i++) {
+        var item = document.getElementsByClassName('item')[i];
+        item.className += " disappear";
+    }
+    setTimeout(() => {  window.location.href = "./subPage/subPage.html"; }, 2000);
 });
 
 
