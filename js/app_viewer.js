@@ -6,13 +6,20 @@ const viewer = new Viewer(document.getElementById('viewer'), {
 });
 
 const gallery = new Viewer(document.getElementById('slider-item'));
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
 document.getElementsByClassName("heart")[0].addEventListener("click", function()
 {   
     for (let i = 0; i < 8; i++) {
         var item = document.getElementsByClassName('item')[i];
-        item.className += " disappear";
+	    item.className += " disappear";
+        sleep(1000);
     }
     setTimeout(() => {  window.location.href = "./subPage/subPage.html"; }, 2000);
+    
 });
 
 
