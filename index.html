@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>3D carousel</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<link rel="stylesheet" href="./css/viewer.css">
+	<script src="./js/viewer.js"></script>
+	<script src="w3.js"></script>
+	<style>
+	.popup{
+		background-color: #ffffff;
+		width: 420px;
+		padding: 30px 40px;
+		position: absolute;
+		transform: translate(-50%,-50%);
+		left: 50%;
+		top: 50%;
+		border-radius: 8px;
+		font-family: "Poppins",sans-serif;
+		display: none; 
+		text-align: center;
+		z-index: 10000;
+	}
+	.popup button{
+		display: block;
+		margin:  0 0 20px auto;
+		background-color: transparent;
+		font-size: 30px;
+		color: #ffffff;
+			background: #03549a;
+			border-radius: 100%;
+			width: 40px;
+			height: 40px;
+		border: none;
+		outline: none;
+		cursor: pointer;
+	}
+	.popup h2{
+		margin-top: -20px;
+	}
+	.popup p{
+		font-size: 14px;
+		text-align: justify;
+		margin: 20px 0;
+		line-height: 25px;
+	}
+	a{
+		display: block;
+		width: 150px;
+		position: relative;
+		margin: 10px auto;
+		text-align: center;
+		background-color: #0f72e5;
+			border-radius: 20px;
+		color: #ffffff;
+		text-decoration: none;
+		padding: 8px 0;
+		cursor: pointer;
+	}
+		</style>
+</head>
+
+<body>
+
+	<div class="popup">
+        <button id="close">&times;</button>
+        <h2>Để ý trái tim nhá!!!</h2>
+        <p>
+            Giữ chuột và di chuyển để xoay vòng vòng á, xoay chán rồi nhấn trái tim nhá.
+        </p>
+        <a id="letgo">Let's Go</a>
+    </div>
+    <!--Script-->
+    <script type="text/javascript">
+		window.addEventListener("load", function () {
+			setTimeout(
+				function open(event) {
+					document.querySelector(".popup").style.display = "block";
+				},
+				2000
+			)
+		});
+
+
+		document.querySelector("#close").addEventListener("click", function () {
+			document.querySelector(".popup").style.display = "none";
+		});
+		document.querySelector("#letgo").addEventListener("click", function () {
+			document.querySelector(".popup").style.display = "none";
+		});
+	</script>
+
+	<div id="main-viewer">
+		<img id="viewer" src="https://images.pexels.com/photos/206395/pexels-photo-206395.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Picture">
+	</div>
+
+	<div id="slider-main">
+		<div id="slider-item">
+			<img src="imgs/1.jpg" class="img-slider item" alt="">
+			<img src="imgs/2.jpg" class="img-slider item" alt="">
+			<img src="imgs/3.jpg" class="img-slider item" alt="">
+			<img src="imgs/4.jpg" class="img-slider item" alt="">
+			<img src="imgs/5.jpg" class="img-slider item" alt="">
+			<img src="imgs/6.jpg" class="img-slider item" alt="">
+			<img src="imgs/7.PNG" class="img-slider item" alt="">
+			<img src="imgs/8.PNG" class="img-slider item" alt="">
+
+			<!-- <img src="0AllanMartin.png" class="img-slider item" alt="">
+			<img src="0AllanMartin.png" class="img-slider item" alt="">
+			<img src="0AllanMartin.png" class="img-slider item" alt="">
+			<img src="0AllanMartin.png" class="img-slider item" alt="">
+			<img src="0AllanMartin.png" class="img-slider item" alt="">
+			<img src="0AllanMartin.png" class="img-slider item" alt="">
+			<img src="0AllanMartin.png" class="img-slider item" alt="">
+			<img src="0AllanMartin.png" class="img-slider item" alt=""> -->
+			<div class="heart" style="cursor: pointer;"></div>
+			</div>
+		</div>
+		<div id="ground"></div>
+	</div>
+		
+	<div id="music-container"></div>
+
+	<script src="./js/jquery.js"></script>
+	<script src="./js/app_viewer.js"></script>
+	<script src="./js/3dslider.js"></script>
+
+
+</body>
+
+</html>
